@@ -1,4 +1,4 @@
-## jare
+### Readme for: Jare - Java Rule Engine ###
 
-Jare - Java Rule Engine
+
 
