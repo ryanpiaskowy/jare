@@ -1,4 +1,4 @@
-jare
+Jare
 ====
 
 Java Rule Engine source files.
@@ -29,4 +29,4 @@ Please send your feedback and help to enhance the tool.
 uwe geercken
 uwe.geercken@web.de
 
-last update: 2014-09-07
+last update: 2014-11-08
