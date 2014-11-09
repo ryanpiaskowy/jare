@@ -33,6 +33,9 @@ the Business Rule Engine jar file is in the Java classpath.
 
 	File file = new File(<path and name of the csv file>);
 	BufferedReader reader = new BufferedReader(new FileReader(file));
+	Splitter splitter = new Splitter(Splitter.TYPE_COMMA_SEPERATED);
+	String line;
+	long counter = 0;
 
 // Loop over the csv file line per line. Each line is split into its individual fields and assigned to a Row object. And finally run the rule engine passing the row of data.
 	
@@ -40,7 +43,18 @@ the Business Rule Engine jar file is in the Java classpath.
 	{
         Row row = splitter.getRow(line); 
         engine.run("row: " + counter, row);
+        counter++;
     }
+
+// You can get the results from the run:
+
+	int numberOfRules = engine.getNumberOfRules();
+    // total number of failed rules
+    int numberOfErrors = engine.getNumberOfRulesFailed();
+    // total number of successful run rules
+    long numbersOfSuccessfulRules = numberOfRules * counter - numberOfErrors;
+    // total number of failed groups
+    long numberOfFailedGroups = engine.getNumberOfGroupsFailed();
 
 
 You may use any Java object and check it with the rule engine. This includes data from files or databases. For more details please read the documentation.
